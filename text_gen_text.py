@@ -26,7 +26,7 @@ def sample(a, temperature=1.0):
     return np.argmax(np.random.multinomial(1, a, 1))
     
 def fancy(s,utf8_to_char):
-    word_l=[word.encode('utf8') for word in jieba.cut(unicode(s,'utf8'))]
+    word_l=[word.encode('utf8') for word in jieba.cut(s,'utf8')]
     sl=[ ''.join(([utf8_to_char[c] for c in word])) for word in word_l]
     return ' '.join(sl)
     
